@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Podgorn</title>
+
+    <script src="6getUnique.js"></script>
+
+</head>
+<body>
+<!-- for http://jscourse.com/task/get-unique !-->
+<script>
+    function init() {
+        var a = {};
+        var b = {};
+        var arr = [a,b,a,b];
+        if (!arr.length) {return arr;}
+        else {var u = arr.filter( getUnique );}
+    }
+   init();
+</script>
+</body>
+</html>

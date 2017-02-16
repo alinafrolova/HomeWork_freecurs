@@ -1,0 +1,75 @@
+h1{
+	font-weight: 700;
+	font-size: 36px;
+
+}
+.block {
+	 padding-top: 10px;
+	 padding-right: 20px;
+	 padding-bottom: 30px;
+	 padding-left: 40px;
+     margin-top:100px;
+    margin-left:50px;
+    margin-right:20px;
+    margin-bottom:0px;
+     border-width: 5px;
+    border-style: solid;
+    border-color: #e31313;
+    background: #ddd;
+}
+.block1 {
+	 padding: 100px;
+    border: 8px dotted #000;
+    margin:10px;
+    background: #baaf16;
+    width: 300px;
+    height: 400px;
+}
+.block2 {
+	 padding: 20px 30px 40px 50px;
+border: 5px dashed #000;
+    margin:10px 20px 20px 50px;
+    background: #ba5c16;
+}
+
+.block3 {
+	 padding: 40px 30px;
+    border-top: 7px double #000;
+    border-bottom: 7px double #000;
+    margin:20px 50px ;
+    background: #ba5c16;
+}
+
+.block4 {
+	 padding: 40px 30px;
+    border: 7px double #000;
+       border-top-width: 5px;
+    border-top-style: solid;
+    border-top-color: #e31313;
+    margin:20px 50px ;
+    background: #ba5c16;
+}
+.block5 {
+	 padding: 40px 30px;    
+    margin:20px 50px ;
+    background: #ba5c16;
+    box-sizing: border-box;
+}
+.block6 {
+	 padding: 40px 30px;    
+    margin:20px 50px ;
+    background: #ba5c16;
+    box-sizing: content-box;
+}
+
+
+.block h1{
+	font-size: 25px;
+	line-height: 1.9;
+	  
+}
+.block p{
+	font-size: 15px;
+	line-height: 1.3;
+	   
+}
