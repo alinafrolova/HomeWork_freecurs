@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>https://forum.jscourse.com/t/07-zadanie-funkczii-metody-nasledovanie/575</title>
+    <script src="toMatrix.js"></script>
+    <script src="pick.js"></script>
+</head>
+<body>
+<script>
+    var user = {
+        name: 'Sergey',
+        age: 30,
+        email: 'sergey@gmail.com',
+        friends: ['Sveta', 'Artem']
+    }
+    pick(user, ['name']); // {name: 'Sergey'}
+    pick(user, ['name', 'second-name']); // {name: 'Sergey'}
+    pick(user, ['name', 'friends']); // {name: 'Sergey', friends:['Sveta', 'Artem']}
+
+</script>
+</body>
+</html>

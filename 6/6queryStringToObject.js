@@ -11,11 +11,11 @@
  queryStringToObject("user=true&age=29"); // {user: true, age: 29}
  queryStringToObject("user=true&age=29&name=Evgen"); // {user: true, age: 29, name: "Evgen"}*/
 function queryStringToObject(queryString) {
-    var splitedQueryString = decodeURIComponent(queryString).split(/[=&]/);
+    var splitedQueryString = split(/[=&]/);
     var myObj = {};
     var keys = [];
     var data = [];
-    
+     if (!queryString) {return {} };
     for (var i = 0; i < splitedQueryString.length; i++) {
         
         if (i % 2 != 0) {
@@ -24,7 +24,7 @@ function queryStringToObject(queryString) {
             keys.push(splitedQueryString[i])
         }
         for (var j = 0; j < data.length; j++) {
-            myObj[keys[j]] = data[j];
+            myObj[keys[j]] = decodeURIComponent( data[j]);
         }
         
     }

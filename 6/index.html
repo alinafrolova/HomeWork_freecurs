@@ -5,19 +5,19 @@
     <title>Podgorn</title>
 
     <script src="6getUnique.js"></script>
+    <script src="fixStruct.js"></script>
 
 </head>
 <body>
 <!-- for http://jscourse.com/task/get-unique !-->
 <script>
-    function init() {
-        var a = {};
-        var b = {};
-        var arr = [a,b,a,b];
-        if (!arr.length) {return arr;}
-        else {var u = arr.filter( getUnique );}
-    }
-   init();
+    console.log( getUnique([3, 2, 1, 2, 3]));
+    var a = {};
+    var b = {};
+    var u = getUnique([a,b,b,a]);
+    console.log(u[0] === a); // true
+    console.log(u[1] === b); // true
+    console.log(u.length === 2); // true
 </script>
 </body>
 </html>
