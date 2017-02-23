@@ -8,12 +8,15 @@
 <body>
  <div id="wrapper">
      <div id = "header">
+       <div class = "header">
         <header>
           <a href="#">
-           <span> Yane Naumoski </span>
-           <span> The Portfolio </span>
+           <h6>Yane Naumoski<br> </h6>
+           <h1>The Portfolio </h1>
           </a>
         </header>
+       </div>
+       <div class = "top-menu header">
         <nav>
           <ul class="top-menu">
             <li><a href="/home/">SERVICES</a></li>
@@ -22,20 +25,129 @@
             <li><a href="/blog/">PROJECTS</a></li>
           </ul>
         </nav>
-       <div id = "heading">
-         <h1>HELLO! <small> Looking for a web/graphic designer?<br> Well, you found him!</small> </h1>
+       </div>
+       <div class = "heading">
+        <blockquote>
+            <h1>HELLO! <br> <small> Looking for a web/graphic designer?<br> Well, you found him!</small> </h1>
+        </blockquote>
        </div>
        <div id = "description">
-           <div class = "description"> ABOUT ME </div>
-           <div class = "description"> SKILLS </div>
+           <div class = "description"> <h2> ABOUT ME </h2>
+             <img src="http://alex9pro.github.io/html/page-proofs/portfolio/img/foto.jpg" alt="Whitesquare logo">
+             <p>Phasellus at elit dui, id interdum est. Fusce luctus risus et odio euismod eleifend. Donec augue quam, bibendum sed egestas non, semper sed nisl. Praesent commodo risus mi. Vivamus lectus massa, laoreet ac molestie eget, consequat vitae nisi. Mauris gravida ligula id. lectus adipiscing lacinia in sit amet mauris.</p>
+           </div>
+           <div class = "description"> <h2> SKILLS </h2>
+               <ul class="web"> <p> WEB</p>
+                   <li>Website Design & Development</li>
+                   <li>Search Engine Optimization</li>
+                   <li>E-Commerce</li>
+                   <li>Content Managment Systems</li>
+               </ul>
+               <ul class="description"> <p> GRAPHIC DESIGN</p>
+                   <li>Brand standarts and evaluation</li>
+                   <li>Corporate Identity</li>
+                   <li>Strategy & Position</li>
+                   <li>Illustration</li>
+               </ul>
+           </div>
        </div>
      </div>
      <div id = "content">
-         <div id = "work">  MY WORK   </div>
-         <div id = "contact">  CONTACT   </div>
-         <div id = "othercontact"> OTHER CONTACT INFO </div>
+       <div id = "work"> <h2> MY WORK  </h2>
+         <div class = "work-row">
+           <figure>
+             <img src="http://alex9pro.github.io/html/page-proofs/portfolio/img/blitzagency.jpg" width="96" height="96" alt="">
+             <figcaption>Blitzagency</figcaption>
+           </figure>
+           <figure>
+             <img src="http://alex9pro.github.io/html/page-proofs/portfolio/img/cocacola.jpg" width="96" height="96" alt="">
+             <figcaption>Coca cola</figcaption>
+           </figure>
+           <figure>
+             <img src="http://alex9pro.github.io/html/page-proofs/portfolio/img/eeci2009.jpg" width="96" height="96" alt="">
+             <figcaption>Eeci2009</figcaption>
+           </figure>
+           <figure>
+             <img src="http://alex9pro.github.io/html/page-proofs/portfolio/img/geticeberg.jpg" width="96" height="96" alt="">
+             <figcaption>Geticeberg</figcaption>
+           </figure>
+         </div>
+         <div class = "work-row">
+           <figure>
+             <img src="http://alex9pro.github.io/html/page-proofs/portfolio/img/lorealparis.jpg" width="96" height="96" alt="">
+             <figcaption>Loreal Paris</figcaption>
+           </figure>
+           <figure>
+             <img src="http://alex9pro.github.io/html/page-proofs/portfolio/img/microsoftoffice.jpg" width="96" height="96" alt="">
+             <figcaption>Microsoft Office</figcaption>
+           </figure>
+           <figure>
+             <img src="http://alex9pro.github.io/html/page-proofs/portfolio/img/sony.jpg" width="96" height="96" alt="">
+             <figcaption>Sony</figcaption>
+           </figure>
+           <figure>
+             <img src="http://alex9pro.github.io/html/page-proofs/portfolio/img/thinkfree.jpg" width="96" height="96" alt="">
+             <figcaption>Think Free</figcaption>
+           </figure>
+         </div>
+         <div class = "work-row">
+           <figure>
+             <img src="http://alex9pro.github.io/html/page-proofs/portfolio/img/trackingtime.jpg" width="96" height="96" alt="">
+             <figcaption>Tracking Time</figcaption>
+           </figure>
+           <figure>
+             <img src="http://alex9pro.github.io/html/page-proofs/portfolio/img/volkswagen.jpg" width="96" height="96" alt="">
+             <figcaption>Volkswagen</figcaption>
+           </figure>
+           <figure>
+             <img src="http://alex9pro.github.io/html/page-proofs/portfolio/img/24media.jpg" width="96" height="96" alt="">
+             <figcaption>24 Media</figcaption>
+           </figure>
+           <figure>
+             <img src="http://alex9pro.github.io/html/page-proofs/portfolio/img/adobe.jpg" width="96" height="96" alt="">
+             <figcaption>Adobe</figcaption>
+           </figure>
+         </div>
+       </div>
+         <div id = "contact">
+             <h2>CONTACT  </h2>
+          <form name="send" action="#" method="get">
+              <h3>SAY HI ONLINE  </h3>
+           <p>Your name </p>
+           <input type="text" name="name" placeholder="Your name">
+           <p>Your e-mail </p>
+           <input type="text" name="mail" placeholder="Your e-mail">
+           <p>Message </p>
+           <textarea type="text" name="Message" ></textarea>
+              <button type="submit">SEND</button>
+          </form>
+         </div>
+         <div id = "othercontact">
+           <h3> OTHER CONTACT INFO</h3>
+           <div class = "info">
+            <p><img src="http://alex9pro.github.io/html/page-proofs/portfolio/img/map.jpg" width="230" height="180" alt="Our offices"></p>
+           </div>
+           <div class = "info">
+             <h5>Address</h5>
+             <p> Lorem Ipsum <br> 254 Lipsum street<br>Dolor Sit, 12345<br> Consectetur </p>
+             <h5>Phone</h5>
+             <p> +12 345-567-890<br> +09 876-543-210 </p>
+             <h5>E-mail</h5>
+             <p> myname@myportfolioweb.com</p>
+           </div>
+         </div>
      </div>
-     <div id = "footer">    </div>
+     <footer>
+      <div id="footer">
+       <div id="footer-logo"> <p>Copyright © 2012 <a href="#">ThePortfolio.</a> All rights reserved. A <a href="#">Pcklab </a>  creation</p></div>
+       <div id="social">
+           <a href="http://twitter.com/" class="social-icon twitter"></a>
+           <a href="http://facebook.com/" class="social-icon facebook"></a>
+           <a href="http://youtube.com/" class="social-icon-small youtube"></a>
+           <a href="http://instagram.com/" class="social-icon-small instagram"></a>
+       </div>
+      </div>
+     </footer>
  </div>
 </body>
 </html>
