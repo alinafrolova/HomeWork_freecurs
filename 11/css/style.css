@@ -1,0 +1,124 @@
+ body {
+    width: 100%;
+    margin: auto;
+    background:url(http://vardenb.github.io/theportfolio/images/bg.jpg);
+}
+
+ p {
+     margin: 20px 0;
+ }
+ #wrapper {
+     max-width: 960px;
+     margin: auto;
+ }
+#header {
+    padding: 20px 0;
+
+}
+.header {
+    display: inline-block;
+}
+ .top-menu {
+     float: right;
+     margin-top: 40px;
+ }
+
+ nav a {
+     text-decoration: none;
+ }
+
+ nav ul {
+     margin: 0;
+     padding: 0;
+
+ }
+
+ nav li {
+     list-style-position: inside;
+     font: 14px 'Oswald', sans-serif;
+     padding: 10px;
+ }
+
+ .top-menu li {
+     display: inline-block;
+     padding: 10px 5px;
+     margin: 0;
+ }
+
+ .top-menu li.active {
+     background: #29c5e6;
+     color: #fff;
+ }
+
+ .top-menu a {
+     color: #b2b2b2;
+
+ }
+ blockquote {
+     text-align: center;
+     margin: 1% 15%;
+     padding: 10px 20px;
+     font-family: 'Oswald', sans-serif;
+     font-weight: 300;
+ }
+
+
+ h1 {
+     display: inline-block;
+     color: #7e7e7e;
+     font: 40px/40px 'Oswald', sans-serif;
+     background: url(../images/bg.png);
+     margin: 0;
+     padding: 0 10px;
+ }
+
+ .description {
+     display: inline-block;
+     width:48%;
+     height:50px;
+     float:left;
+     margin-left:15px;
+ }
+ .descline {
+     display: inline-block;
+     width:45%;
+     height:250px;
+     background: #992323;
+     float:left;
+     margin-left:15px;
+ }
+ .line {
+     display: inline-block;
+     float:left;
+     width:46%;
+     height:200px;
+     background:#669900;
+     float:left;
+     margin-left:15px;
+ }
+ .row {
+     display: inline-block;
+     width:15%;
+     height:150px;
+     background:#669900;
+     float:left;
+
+ }
+ figure figcaption {
+     font-size: 16px;
+     font-weight: 300;
+     margin-top: 5px;
+ }
+
+ figure div {
+     font-size: 14px;
+     color: #29c5e6;
+ }
+
+ .work-row figure {
+     margin-top: 20px;
+ }
+
+ .work-row figure + figure {
+     margin-left: 43px;
+ }
