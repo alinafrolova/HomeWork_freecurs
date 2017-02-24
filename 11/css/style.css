@@ -8,7 +8,7 @@
      margin: 20px 0;
  }
  #wrapper {
-     max-width: 960px;
+     max-width: 1000px;
      margin: auto;
  }
 #header {
@@ -66,7 +66,24 @@
  h1 {
      display: inline-block;
      color: #7e7e7e;
-     font: 40px/40px 'Oswald', sans-serif;
+     font: 38px 'Bebas Neue', sans-serif;
+     background: url(../images/bg.png);
+     margin: 0;
+     padding: 0 10px;
+ }
+
+ h2 {
+     display: inline-block;
+     color: #d14343;
+     font: 30px 'Bebas Neue', Verdana, sans-serif;
+     background: url(../images/bg.png);
+     margin: 0;
+     padding: 0 10px;
+ }
+ h3 {
+     display: inline-block;
+     color: #7e7e7e;
+     font: 'Bebas Neue', sans-serif;
      background: url(../images/bg.png);
      margin: 0;
      padding: 0 10px;
@@ -82,27 +99,36 @@
  .descline {
      display: inline-block;
      width:45%;
-     height:250px;
-     background: #992323;
      float:left;
-     margin-left:15px;
+
+ }
+ .leftimg {
+     float:left; /* Выравнивание по левому краю */
+     margin: 25px 7px 7px 0; /* Отступы вокруг картинки */
+
  }
  .line {
      display: inline-block;
      float:left;
      width:46%;
      height:200px;
-     background:#669900;
-     float:left;
-     margin-left:15px;
+
+     margin-left:0px;
+ }
+ .work-row{
+     margin-left: 0px;
+     margin-left: 5px;
  }
  .row {
      display: inline-block;
      width:15%;
-     height:150px;
-     background:#669900;
+     height:155px;
      float:left;
 
+ }
+ .row image {
+     width:50px;
+     height:130px;
  }
  figure figcaption {
      font-size: 16px;
