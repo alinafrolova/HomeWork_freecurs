@@ -8,7 +8,7 @@
      margin: 20px 0;
  }
  #wrapper {
-     max-width: 960px;
+     max-width: 1000px;
      margin: auto;
  }
 #header {
@@ -18,9 +18,17 @@
 .header {
     display: inline-block;
 }
+ header h6{
+     margin-bottom: 0px;
+     color: #d14343;
+ }
+ header h1{
+     text-decoration:underline;
+     padding: 0px;
+ }
  .top-menu {
      float: right;
-     margin-top: 40px;
+     margin-top: 20px;
  }
 
  nav a {
@@ -39,20 +47,26 @@
      padding: 10px;
  }
 
- .top-menu li {
+ .top-menu li, .menu-work li {
      display: inline-block;
      padding: 10px 5px;
      margin: 0;
  }
 
- .top-menu li.active {
+ .top-menu li.active, .menu-work li.active {
      background: #29c5e6;
      color: #fff;
  }
 
- .top-menu a {
+ .top-menu a, .menu-work a {
      color: #b2b2b2;
 
+ }
+ hr {
+     border: none; /* Убираем границу */
+     background-color: #b2b2b2; /* Цвет линии */
+     color: #b2b2b2; /* Цвет линии для IE6-7 */
+     height: 2px; /* Толщина линии */
  }
  blockquote {
      text-align: center;
@@ -66,11 +80,160 @@
  h1 {
      display: inline-block;
      color: #7e7e7e;
-     font: 40px/40px 'Oswald', sans-serif;
+     font: 38px 'Bebas Neue', sans-serif;
      background: url(../images/bg.png);
      margin: 0;
      padding: 0 10px;
  }
- .description {
+
+ h2 {
      display: inline-block;
+     color: #d14343;
+     font: 30px 'Bebas Neue', Verdana, sans-serif;
+     background: url(../images/bg.png);
+     margin: 0;
+     padding: 0 10px;
+ }
+ h3 {
+     display: inline-block;
+     color: #7e7e7e;
+     font: 'Bebas Neue', sans-serif;
+     background: url(../images/bg.png);
+     margin: 0;
+     padding: 0 10px;
+ }
+
+ .left-text{
+     float:right;
+     padding-right: 251px;
+ }
+ .menu-work{
+     display: inline-block;
+     float: right;
+ }
+ .description, .contact {
+     display: inline-block;
+     width:48%;
+     height:50px;
+     float:left;
+     margin-left:5px;
+ }
+ .descline {
+     display: inline-block;
+     width:45%;
+     float:left;
+ }
+ .leftimg {
+     float:left; /* Выравнивание по левому краю */
+     margin: 25px 7px 7px 0; /* Отступы вокруг картинки */
+
+ }
+ .line {
+     display: inline-block;
+     float:left;
+     width:46%;
+     height:200px;
+ }
+#description .descline  {
+    margin-left:30px;
+}
+ .work-row{
+     margin-left: 0px;
+     margin-left: 5px;
+ }
+ .row {
+     display: inline-block;
+     width:15%;
+     height:155px;
+     float:left;
+
+ }
+ .row image {
+     width:50px;
+     height:130px;
+ }
+ figure figcaption {
+     font-size: 16px;
+     font-weight: 300;
+     margin-top: 5px;
+ }
+
+ figure div {
+     font-size: 14px;
+     color: #29c5e6;
+ }
+
+ .work-row figure {
+     margin-top: 20px;
+ }
+
+ .work-row figure + figure {
+     margin-left: 43px;
+ }
+ .colortext {
+     background-color: #E4E4E4; /* Цвет фона */
+ }
+ #contact {
+     height: 470px;
+ }
+ .contact .descline {
+     margin-bottom: 5px;
+     color: #7e7e7e;
+     width: 220px;
+     height: 32px;
+     margin-left: 10px;
+ }
+ textarea {
+     width: 94%; /* Ширина поля в процентах */
+     height: 200px; /* Высота поля в пикселах */
+     resize: none; /* Запрещаем изменять размер */
+     margin-left: 10px;
+     padding-top: 0px;
+ }
+ #contact .descline {
+     margin-left: 15px;
+ }
+ button {
+     background-color: #d14343;
+     color: #ffffff;
+     width: 100px;
+     height: 32px;
+     margin-left: 10px;
+     margin-top: 20px;
+ }
+ .adress{
+     width:30%;
+     margin-left: 32px;
+     float:right;
+     color: #7e7e7e;
+ }
+ .adress h5 {
+     margin-bottom: 10px;
+ }
+ .adress p {
+     margin-top: 5px;
+     margin-bottom: 15px;
+     margin-left: 10px;
+ }
+ .adress a{
+     color: #d14343;
+ }
+ #footer {
+     height: 70px;
+     margin-left: 20px;
+     color: #7e7e7e;
+
+ }
+ #footer-logo a{
+     color: #d14343;
+
+ }
+
+ #footer-logo p {
+     display: inline-block;
+     float:left;
+ }
+ #social {
+     display: inline-block;
+     float:right;
  }
