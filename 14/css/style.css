@@ -3,7 +3,7 @@ body {
     margin: auto;
     background:#ffffff;
     margin: auto;
-    min-width: 980px;
+    min-width: 1100px;
 
 }
 
@@ -29,7 +29,7 @@ nav ul {
 
 nav li {
     list-style-position: inside;
-    font: 14px 'Oswald', sans-serif;
+    font: 16px 'Oswald', sans-serif;
     padding: 10px;
 }
 
@@ -43,7 +43,7 @@ nav li {
     color: #fff;
 }
 
-.top-menu a {
+.header .top-menu a {
     color: #b2b2b2;
 }
 .login{
@@ -66,7 +66,7 @@ nav li {
     display: inline-block;
     margin-top: 5px;
     margin-right: 5px;
-    font: 14px 'Oswald', sans-serif;
+    font: 16px 'Oswald', sans-serif;
     color: #b2b2b2;
 
 }
@@ -78,4 +78,90 @@ nav li {
     border: 0px;
     height: 25px;
     width: 40px;
+}
+.main {
+    margin-left: 11%;
+    margin-right: 11%;
+}
+.main-menu {
+    background:#dbdbdb;
+    height: 45px;
+    padding-top: 2px;
+    border-radius: 3px;
+}
+.main a{
+  color: #3d3b3b;
+
+}
+.main-menu li{
+    padding: 13px 15px ;
+    font: 16px bold italic , 'Oswald', sans-serif;
+    border-right-color: #b2b2b2; /* Цвет линии справа */
+    border-right-style: solid; /* Стиль линии */
+    border-right-width: 1px; /
+
+}
+form[name="search"] {
+    float: right;
+    height: 36px;
+    width: 300px;
+    padding-top: 3px
+}
+
+input[type="search"] {
+    border: none; /* Убираем рамку */
+    outline: none; /* Убираем свечение в Chrome и Safari */
+    -webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
+    vertical-align: middle; /* Выравнивание по середине */
+    width: 274px;
+    height: 36px;
+    background: #3d3b3b;
+    border-radius: 3px;
+
+
+}
+input[type="submit"] {
+    display: inline-block;
+    width: 30px; /* Ширина кнопки */
+    height: 30px; /* Высота кнопки */
+    border: none; /* Убираем рамку */
+    outline: none;
+    background: url(magnifying-glass.png) no-repeat 100% 100%; /* Параметры фона */
+}
+
+.line {
+    display: inline-block;
+    float:left;
+    width:46%;
+    height:200px;
+}
+.title {
+    display: inline-block;
+    color: #d23d3d;
+    font: 70px 'Bebas Neue', sans-serif;
+    margin: 0;
+    padding: 40px 10px;
+}
+.line li{
+    padding: 0px;
+    color: #a7a7aa;
+}
+.description ul {
+    list-style: none; /* Remove list bullets */
+    padding: 0;
+    margin: 0;
+}
+
+.description li {
+    padding-left: 16px;
+}
+
+.description li:before {
+    content: "•"; /* Insert content that looks like bullets */
+    padding-right: 8px;
+    color: blue; /* Or a color you prefer */
+}
+.line image {
+    height: 50px;
+    width: 50px;
 }
