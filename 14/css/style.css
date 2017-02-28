@@ -126,7 +126,7 @@ input[type="submit"] {
     height: 30px; /* Высота кнопки */
     border: none; /* Убираем рамку */
     outline: none;
-    background: url(magnifying-glass.png) no-repeat 100% 100%; /* Параметры фона */
+    background: url(../magnifying-glass.png) no-repeat 100% 100%; /* Параметры фона */
 }
 
 .line {
@@ -145,6 +145,7 @@ input[type="submit"] {
 .line li{
     padding: 0px;
     color: #a7a7aa;
+    font: 17px "Trebuchet MS", Helvetica, sans-serif;
 }
 .description ul {
     list-style: none; /* Remove list bullets */
@@ -159,9 +160,57 @@ input[type="submit"] {
 .description li:before {
     content: "•"; /* Insert content that looks like bullets */
     padding-right: 8px;
-    color: blue; /* Or a color you prefer */
+    color: #3db9ef; /* Or a color you prefer */
 }
-.line image {
-    height: 50px;
-    width: 50px;
+.store{
+    position:relative;
+    left:5px;
+    top:105px;
+}
+hr {
+    border: none; /* Убираем границу */
+    background-color: #b2b2b2; /* Цвет линии */
+    color: #b2b2b2; /* Цвет линии для IE6-7 */
+    height: 2px; /* Толщина линии */
+}
+.description{
+    height: 400px;
+}
+figure {
+    display: inline-block;
+    margin: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    width: 23%;
+}
+
+figure div {
+    display: block;
+    border: 1px solid #fff;
+    outline: 1px solid #c9c9c9;
+
+}
+.text-box {
+    display: inline-block;
+}
+figure image{
+    display: inline-block;
+}
+
+figure figcaption {
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+figure figcaption span {
+    display: block;
+    font-size: 14px;
+    color: #29c5e6;
+}
+section > figure + figure {
+    margin-left: 28px;
+}
+h3{
+   color: #3db9ef;
 }
