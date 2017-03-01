@@ -17,7 +17,12 @@ body {
     margin-left: 11%;
     margin-right: 11%;
 }
-
+.delimiter{
+    border-bottom: 1px dashed black;
+    position: absolute;
+    right: 0;
+    left: 0;
+}
 nav a {
     text-decoration: none;
 }
@@ -43,7 +48,7 @@ nav li {
     color: #fff;
 }
 
-.header .top-menu a {
+.header .top-menu a ,.footer, .footer a{
     color: #b2b2b2;
 }
 .login{
@@ -80,8 +85,8 @@ nav li {
     width: 40px;
 }
 .main {
-    margin-left: 11%;
-    margin-right: 11%;
+    width: 80%;
+    margin: 0 auto;
 }
 .main-menu {
     background:#dbdbdb;
@@ -111,20 +116,21 @@ form[name="search"] {
 
 input[type="search"] {
 
-    float: right;
+    float:left;
     border: none; /* Убираем рамку */
     outline: none; /* Убираем свечение в Chrome и Safari */
     -webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
     vertical-align: middle; /* Выравнивание по середине */
     width: 274px;
-    height: 36px;
+    height:2em;
     background: #3d3b3b;
     border-radius: 3px;
 }
 input[type="submit"] {
-
-    width: 25px; /* Ширина кнопки */
-    height: 25px; /* Высота кнопки */
+    position: relative;
+    margin: 0 -22px;
+    width: 20px; /* Ширина кнопки */
+    height: 27px; /* Высота кнопки */
     border: none; /* Убираем рамку */
     outline: none;
     background: url(F:/Javascript/JS_Video_Podgorniy_N4/Podgorniy/14/image/magnifying-glass.png) 20% 20%;/* Параметры фона */
@@ -175,11 +181,14 @@ hr {
     background-color: #b2b2b2; /* Цвет линии */
     color: #b2b2b2; /* Цвет линии для IE6-7 */
     height: 2px; /* Толщина линии */
+    padding: inherit;
 }
 .description{
+    height: 450px;
+}
+.products{
     height: 400px;
 }
-
 .products figure {
     display: inline-block;
     margin: 5px;
@@ -191,8 +200,7 @@ hr {
 .box {
     border: 1px solid #fff;
     outline: 1px solid #c9c9c9;
-    min: 50%;
-    min: 50%;
+
 }
 
 .text-box {
@@ -203,7 +211,7 @@ hr {
     display: inline-block;
    }
 
-h3{
+h3,.contact a {
    color: #3db9ef;
 }
 img {
@@ -233,7 +241,8 @@ img {
     display: inline-block;
 }
 .contact{
-    height: 400px;
+    height: 480px;
+
 }
 .contact figure{
     margin-left: 10px;
@@ -245,6 +254,20 @@ img {
     margin-right: 1%;
 }
 .footer {
-    margin-left: 11%;
-    margin-right: 11%;
+    background:#5e5a5a;
+    height: 70px;
+    padding: 0px 11%;
 }
+
+#footer-logo p {
+    display: inline-block;
+    float:left;
+}
+#social {
+    float:right;
+}
+.social-icon {
+    display: inline-block;
+    margin-right: 10px;
+}
+
