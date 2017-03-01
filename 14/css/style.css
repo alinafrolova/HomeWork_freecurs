@@ -178,39 +178,29 @@ hr {
 }
 figure {
     display: inline-block;
-    margin: 10px;
+    margin: 5px;
     font-family: 'Oswald', sans-serif;
     font-weight: 300;
     width: 23%;
 }
 
-figure div {
-    display: block;
+.box {
     border: 1px solid #fff;
     outline: 1px solid #c9c9c9;
-
 }
+
 .text-box {
     display: inline-block;
 }
-figure image{
+
+.image{
     display: inline-block;
+   }
+.image image{
+    width:50%;
+    height:50%;
 }
 
-figure figcaption {
-    font-size: 16px;
-    font-weight: 300;
-    margin-top: 5px;
-}
-
-figure figcaption span {
-    display: block;
-    font-size: 14px;
-    color: #29c5e6;
-}
-section > figure + figure {
-    margin-left: 28px;
-}
 h3{
    color: #3db9ef;
 }

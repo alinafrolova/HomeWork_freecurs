@@ -1,0 +1,18 @@
+     <figure>
+             <div class = "box">
+                 <h3> Windows Phone <br>Apps</h3>
+                 <h6>Lorem ipsum dolor sit <br>amet, consectetur <br>adipiscing elit.</h6>
+                 <div class = "image">
+                     <img src="image/windows.png" width="110" height="125" alt="">
+                 </div>
+             </div>
+         </figure>
+         <figure>
+             <div class = "box">
+                 <h3> Windows <br>PC Apps</h3>
+                 <h6>Lorem ipsum dolor sit <br>amet, consectetur <br>adipiscing elit.</h6>
+                 <div class = "image">
+                     <img src="image/desktops.png" width="110" height="125" alt="">
+                 </div>
+             </div>
+         </figure>
