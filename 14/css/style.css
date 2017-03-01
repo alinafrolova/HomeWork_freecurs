@@ -105,10 +105,13 @@ form[name="search"] {
     float: right;
     height: 36px;
     width: 300px;
-    padding-top: 3px
+    padding-top: 3px;
+    padding-right: 0.5%;
 }
 
 input[type="search"] {
+
+    float: right;
     border: none; /* Убираем рамку */
     outline: none; /* Убираем свечение в Chrome и Safari */
     -webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
@@ -117,30 +120,29 @@ input[type="search"] {
     height: 36px;
     background: #3d3b3b;
     border-radius: 3px;
-
-
 }
 input[type="submit"] {
-    display: inline-block;
-    width: 30px; /* Ширина кнопки */
-    height: 30px; /* Высота кнопки */
+
+    width: 25px; /* Ширина кнопки */
+    height: 25px; /* Высота кнопки */
     border: none; /* Убираем рамку */
     outline: none;
-    background: url(../magnifying-glass.png) no-repeat 100% 100%; /* Параметры фона */
+    background: url(F:/Javascript/JS_Video_Podgorniy_N4/Podgorniy/14/image/magnifying-glass.png) 20% 20%;/* Параметры фона */
 }
 
 .line {
     display: inline-block;
     float:left;
     width:46%;
-    height:200px;
+    height:50%;
 }
 .title {
     display: inline-block;
     color: #d23d3d;
     font: 70px 'Bebas Neue', sans-serif;
     margin: 0;
-    padding: 40px 10px;
+    padding: 10% 1% 1% 1%;
+    min-width: 466.828px;
 }
 .line li{
     padding: 0px;
@@ -151,6 +153,7 @@ input[type="submit"] {
     list-style: none; /* Remove list bullets */
     padding: 0;
     margin: 0;
+    height: 100%;
 }
 
 .description li {
@@ -176,7 +179,8 @@ hr {
 .description{
     height: 400px;
 }
-figure {
+
+.products figure {
     display: inline-block;
     margin: 5px;
     font-family: 'Oswald', sans-serif;
@@ -187,20 +191,60 @@ figure {
 .box {
     border: 1px solid #fff;
     outline: 1px solid #c9c9c9;
+    min: 50%;
+    min: 50%;
 }
 
 .text-box {
     display: inline-block;
 }
 
-.image{
+.image-box{
     display: inline-block;
    }
-.image image{
-    width:50%;
-    height:50%;
-}
 
 h3{
    color: #3db9ef;
+}
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+
+}
+.blog{
+   height: 400px;
+}
+.blog figure{
+    float: left;
+    margin: 5px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    width: 48%;
+}
+.blog{
+    height: 400px;
+}
+.tw-text-box {
+    display: inline-block;
+}
+
+.tw-image-box{
+    display: inline-block;
+}
+.contact{
+    height: 400px;
+}
+.contact figure{
+    margin-left: 10px;
+
+}
+.contact div{
+    float: left;
+    width: 49%;
+    margin-right: 1%;
+}
+.footer {
+    margin-left: 11%;
+    margin-right: 11%;
 }
