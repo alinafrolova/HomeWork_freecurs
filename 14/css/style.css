@@ -110,7 +110,7 @@ form[name="search"] {
     float: right;
     height: 36px;
     width: 300px;
-    padding-top: 3px;
+    padding-top: 0.5%;
     padding-right: 0.5%;
 }
 
@@ -130,7 +130,7 @@ input[type="submit"] {
     position: relative;
     margin: 0 -22px;
     width: 20px; /* Ширина кнопки */
-    height: 27px; /* Высота кнопки */
+    height: 26px; /* Высота кнопки */
     border: none; /* Убираем рамку */
     outline: none;
     background: url(F:/Javascript/JS_Video_Podgorniy_N4/Podgorniy/14/image/magnifying-glass.png) 20% 20%;/* Параметры фона */
@@ -176,31 +176,17 @@ input[type="submit"] {
     left:5px;
     top:105px;
 }
-hr {
-    border: none; /* Убираем границу */
-    background-color: #b2b2b2; /* Цвет линии */
-    color: #b2b2b2; /* Цвет линии для IE6-7 */
-    height: 2px; /* Толщина линии */
-    padding: inherit;
-}
-.description{
-    height: 450px;
-}
-.products{
-    height: 400px;
-}
-.products figure {
-    display: inline-block;
-    margin: 5px;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 300;
+
+.products > .box {
+    float: left;
     width: 23%;
+    margin-left: 2%;
+    outline: 1px solid black;
+    position: relative;
+
 }
-
-.box {
-    border: 1px solid #fff;
-    outline: 1px solid #c9c9c9;
-
+.products > .box:last-child {
+    margin-right: 0;
 }
 
 .text-box {
@@ -209,19 +195,38 @@ hr {
 
 .image-box{
     display: inline-block;
+    margin-right: 5px;
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
    }
 
 h3,.contact a {
    color: #3db9ef;
+   font-size: 1.4em ;
+}
+h6{
+    font-size: 1em ;
 }
 img {
     display: block;
     height: auto;
     max-width: 100%;
+    margin-left: 2%
 
 }
+.description{
+    height: 450px;
+}
+.products{
+    height: 350px;
+}
 .blog{
-   height: 400px;
+   height: 430px;
+}
+.contact{
+    height: 500px;
+
 }
 .blog figure{
     float: left;
@@ -230,9 +235,7 @@ img {
     font-weight: 300;
     width: 48%;
 }
-.blog{
-    height: 400px;
-}
+
 .tw-text-box {
     display: inline-block;
 }
@@ -240,10 +243,7 @@ img {
 .tw-image-box{
     display: inline-block;
 }
-.contact{
-    height: 480px;
 
-}
 .contact figure{
     margin-left: 10px;
 
@@ -255,6 +255,7 @@ img {
 }
 .footer {
     background:#5e5a5a;
+    font-family: 'Tahoma','Arial regular', 'Arial Black', sans-serif;
     height: 70px;
     padding: 0px 11%;
 }
