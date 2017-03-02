@@ -1,5 +1,9 @@
 /**
  * Created by Frolova on 02.03.2017.
+ * Выполнить
+ Релизовать функцию createList(listData, listContainer, itemContainer), возвращаюшую узел списка.
+ Использовать innerHTML нельзя. Второй и третий аргументы не обязательные. Значения по умолчанию для них - ul и li. listData - массив.
+ listData Может содержать как элементы (текст), так и массивы элементов. Глубина вложенности массивов любая.
  */
 function createList(listData, listContainer, itemContainer) {
     var newOl = document.createElement(listContainer || 'ol'), //создаем строку ol

@@ -1,5 +1,7 @@
 /**
  * Created by Frolova on 02.03.2017.
+ *Реализовать функцию getUniqueTags, которая возвращает массив названий тегов, присутствуещих на странице.
+ * В массиве каждого типа тег должен присутствовать в единственном экземпляре.
  */
 function getUniqueTags() {
     var elems = document.body.childNodes,
