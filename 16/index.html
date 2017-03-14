@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+    <script src="contextMenu.js"></script>
+</head>
+<body>
+<h1>https://forum.jscourse.com/t/15-zadanie-dom/691/53</h1>
+
+<footer>
+    <div id="footer">
+        <hr>
+        <div id="footer-logo"> <p>Copyright © 2012 <a href="#">ThePortfolio.</a> All rights reserved. A <a href="#">Pcklab </a>  creation</p></div>
+        <div id="social">
+            <a href="http://twitter.com/" class="social-icon twitter"></a>
+            <a href="http://facebook.com/" class="social-icon facebook"></a>
+            <a href="http://youtube.com/" class="social-icon-small youtube"></a>
+            <a href="http://instagram.com/" class="social-icon-small instagram"></a>
+        </div>
+    </div>
+</footer>
+<script>
+    (function () {
+        var menuExample = [{
+        title: 'File',
+        action: function () {console.log('open file')}
+    }, {
+        title: 'Edit',
+        action: function () {console.log('edit content')}
+    }, {
+        title: 'More stuff',
+        submenu: [{
+            title: 'Send by email',
+            action: function () {console.log('emailed')}
+        }, {
+            title: 'Send via skype',
+            action: function () {console.log('skyped')}
+        }]
+    }];
+
+        console.log(newMenu);
+        var newMenu  = new ContextMenu(menuExample);
+        newMenu.createMenu();
+
+    }())
+</script>
+</body>
+</html>
