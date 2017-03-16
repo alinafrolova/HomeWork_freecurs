@@ -6,6 +6,14 @@ function ContextMenu( menuExample) {
             console.log(menuExample);
             createList(menuExample);
         };
+        this.openContextMenu = function () {
+            document.body.oncontextmenu = function(e) {
+                event.preventDefault();
+                if (event.target.nodeName != 'li') return;
+                
+                alert( 'Ура!' );
+            }
+        }
         
    
        
@@ -13,7 +21,6 @@ function ContextMenu( menuExample) {
 }
 
 function createList(listData, listContainer, itemContainer, parent) {
-   
     var newUL = document.createElement(listContainer || 'ul'), //create ul
         itemContainer = itemContainer || 'li',
         newLi = [],
@@ -23,17 +30,16 @@ function createList(listData, listContainer, itemContainer, parent) {
                 for (var key in item) {
                         newLi[i] = document.createElement(itemContainer);//create li
                         newUL.appendChild(newLi[i]);
-                        
                         if (Array.isArray((item[key]))){ parent = newLi[i]; createList(item[key],listContainer, itemContainer,parent); }
-                        else{ if(typeof(item) == "object") {
+                        else{
+                            if(typeof(item) == "object") {
                             if (key === 'title') {
                                 parent.appendChild(newUL);
                                 newLi[i].appendChild( document.createTextNode(item.title));
                             }
+                               }
                         }
-                        }
-                    }
-               
+                }
             });
     var masLI = document.getElementsByTagName('li');
     for (var j = 0; j < masLI.length; j++ ){
