@@ -1,48 +1,64 @@
 
 /** * Created by Frolova on 02.03.2017. **/
-function ContextMenu( menuExample) {
+function ContextMenu( menuExample,node) {
 
-        this.createMenu = function () {
-            var btn = document.createElement("BUTTON");        // Create a <button> element
-            var t = document.createTextNode("CLICK ME");       // Create a text node
-            btn.appendChild(t);                                // Append the text to <button>
-            document.body.appendChild(btn);                   // Append <button> to <body>
+        this.createMenu = function (node) {
+            createNode(node);
             createList(menuExample);
             document.getElementsByTagName('UL')[0].id = "contextMenu";
         };
-        this.openContextMenu = function () {
-            var cxElement = document.getElementById("contextMenu"); // // This is the actual HTML context menu:
+        this.openContextMenu = function (node) {
+            var node = node || "BUTTON",
+                cxElement = document.getElementById("contextMenu"); // // This is the actual HTML context menu:
+                
             document.body.oncontextmenu = function(e) {
                 event.preventDefault();
-                var target = event.target;
-                if (event.target.nodeName != 'BUTTON') return;
+              var target = event.target;
+                if (target.nodeName != node) return;
                 showContextMenu(cxElement);
-                alert( 'Ура!' );
             }
-            document.body.onclick = function(e) {
-                event.preventDefault();
-                cxElement.style.display = "none";
-                alert( 'Why&' );
-            }
+            clickOnMenu(menuExample);
         }
 
 
 }
+function clickOnMenu(menuExample) {
+    //noinspection JSUnresolvedFunction
+    jQuery (document).ready(init);
+    
+    function init(){
+        //noinspection JSUnresolvedFunction
+        jQuery('#contextMenu').bind('click', desc);
+    }
+    
+    function desc(event, menu){
+        var menu = menu || menuExample,
+            op = event.target.outerText,
+            key = op;
+        
+        for ( key  in menu) {
+            switch (op)
+            {
+                case menu[key].title : menu[key].action; console.log(menu[key].action);break;
+            }
+            if (Array.isArray(menu[key].submenu)){  desc(event, menu[key].submenu); }
+            
+        }
+        return menu[key];
+    }
+    
+}
+function createNode(node) {
+    var node = node || 'BUTTON',
+     elem = document.createElement(node),        // Create a <button> element
+     t = document.createTextNode("CLICK ME");       // Create a text node
+    elem.appendChild(t);                                // Append the text to <button>
+    document.body.appendChild(elem);
+    // Append <button> to <body>
+    return elem;
+}
 function showContextMenu(cxElement) {
-
-    // Show only the relevant buttons given the current state.
-   // var cmd = diagram.commandHandler;
-  /*  document.getElementById("cut").style.display = cmd.canCutSelection() ? "block" : "none";
-    document.getElementById("copy").style.display = cmd.canCopySelection() ? "block" : "none";
-    document.getElementById("paste").style.display = cmd.canPasteSelection() ? "block" : "none";
-    document.getElementById("delete").style.display = cmd.canDeleteSelection() ? "block" : "none";
-    document.getElementById("color").style.display = (obj !== null ? "block" : "none");
-    */
-    // Now show the whole context menu element
     cxElement.style.display = "block";
-
-    //cxElement.style.left = mousePt.x + "px";
-    //cxElement.style.top = mousePt.y + "px";
 }
 
 
