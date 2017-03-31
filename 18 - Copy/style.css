@@ -1,0 +1,84 @@
+.container{
+    width: 90%;
+    height: 400px;
+    max-width: 600px;
+    padding: 10px; /* Поля вокруг текста */
+    margin: auto; /* Выравниваем по центру */
+}
+.row{
+
+}
+.lep_timer{
+    float:left;
+    width: 300px;
+    height: 500px;
+
+}
+.timer{
+    float:left;
+    width: 200px;
+    height: 70px;
+    background-color: white;
+    margin: 40px;
+}
+.timer p{
+    font-size:35px;
+    font-weight: bold;
+}
+
+.lap_timer{
+    display: inline-block;
+    position: relative; /* указывать обязательно */
+    float:left;
+    width: 90%;
+    height: 70px;
+    background-color: aliceblue;
+    margin: 3%;
+}
+.close-block {
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    width: 16px;
+    height: 16px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAElBMVEXqAAD8oaH/AAD/ra3/vr7///91+I/7AAAAQklEQVR42oXPwQoAIAgD0JXu/385FfTQgnYweKAp9pUXmE+swAFWAG8owQBTqjQQ8SQOcAdRQVtkqHy7dDFd/X/tAVqqAopyUfkOAAAAAElFTkSuQmCC);
+    cursor: pointer;
+}
+.lap_timer p {
+    width: 100%;
+    height: auto;
+    margin: 3%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 20pt;
+}
+.inter_panel{
+    float:left;
+    width: 300px;
+    height: 500px;
+
+}
+.panel{
+    float: left;
+    margin-top: 25px;
+}
+button {
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: .8em 1em calc(.8em + 3px);
+    border-radius: 3px;
+    transition: 0.2s;
+    margin: 5px;
+    font-size:18px
+}
+.stop { display: none ;}
+.start:hover { background: rgb(53, 167, 110); }
+.stop:hover { background: rgb(53, 167, 110); }
+.lap:hover{ background: rgb(173, 216, 234);}
+.reset:hover{ background: rgb(201, 22, 28);}
+
+button:active {
+    background: rgb(33,147,90);
+    box-shadow: 0 3px rgb(33,147,90) inset;
+}
