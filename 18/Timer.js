@@ -5,20 +5,24 @@
 (function () {
    
     function Timer(node){
-    
+        var START =  $('button[name]:first'),
+            RESET =  $('button[name]:last'),
+            self = this,
+            button = START || RESET;
+        
         this.node = node;
-        var creator = this._CreateTimer(this.node,"Bla"),
-            button = document.querySelector("button");
+        this._CreateTimer(this.node,"Bla");
+        
         button.addEventListener("click", function(event) {
             switch (event.which) {
                 case 1:
-                    this._Start();
+                    self._Start();
                     break;
                 case 2:
-                    this._Lap(this.node);
+                    self._Lap(this.node);
                     break;
                 case 3:
-                    this._Reset(this.node);
+                    self._Reset(this.node);
                     break;
             }
         });
