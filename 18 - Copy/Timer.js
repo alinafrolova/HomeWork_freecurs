@@ -6,10 +6,11 @@
     var init=0,
         startDate,
         clocktimer;
+        
     function Timer(node) {
         var START = $('button')[0],
-            LAP = $('button')[2],
-            RESET = $('button')[3];
+            LAP = $('button')[1],
+            RESET = $('button')[2];
             
        
         this.node = node;
@@ -27,9 +28,10 @@
     },
  /////////_Start////////
     Timer.prototype._Start = function () {
-        console.log("_Start");
-        displayStart();
+        
         if (init == 0) {
+            console.log("_Start");
+            displayStart();
             startDate = new Date();
             startTIME();
             init = 1;
@@ -37,10 +39,7 @@
         else {
         console.log("_Stop");
         displayStop();
-            var str = trim(document.clockform.label.value);
-            document.getElementById('marker').innerHTML = (str==''?'':str+': ') +
-            $('div')[3].value + '<br>' + document.getElementById('marker').innerHTML;
-            clearFields();
+        init = 0;
         }
        
     },
@@ -53,13 +52,18 @@
         
  /////////_Lap////////
     Timer.prototype._Lap = function () {
-        return console.log("Lap");
-        clearFields()
+        console.log("Lap");
+        insertTimer();
+       /* var str = trim(document.getElementById('timer').innerText);
+        document.getElementById('timer').innerHTML = (str==''?'':str+': ') +
+        document.getElementById('timer').innerText + '<br>' + document.getElementById('timer').innerHTML;*/
+        clearFields();
+       // function trim(string) { return string.replace (/\s+/g, " ").replace(/(^\s*)|(\s*)$/g, ''); }
         },
         
 /////////_Reset////////
     Timer.prototype._Reset = function () {
-        return console.log("Reset");
+        console.log("Reset");
         clearALL();
     }
     window.Timer = Timer;
@@ -80,34 +84,44 @@
         if (minutes <10) minutes ='0'+minutes ;
         if (seconds <10) seconds ='0'+seconds ;
         if (milliseconds <10) milliseconds ='0'+milliseconds ;
-        if (init==1) console.log(hours  + ':' + minutes  + ':' + seconds  + '.' + milliseconds ); //$('div')[3].innerHTML = hours  + ':' + minutes  + ':' + seconds  + '.' + milliseconds ;
+        if (init==1) console.log(hours  + ':' + minutes  + ':' + seconds  + '.' + milliseconds );
+        $('#timer').text(hours  + ':' + minutes  + ':' + seconds  + '.' + milliseconds) ;
         clocktimer = setTimeout(startTIME,10);
+    }
+    function insertTimer() {
+        var str = trim(document.getElementById('timer').innerText),
+            
+         /*   fragment = document.createDocumentFragment();
+            fragment.appendChild("<div  class = 'lap_timer'><span class='close-block'></span></div>");
+           container.appendChild(fragment);*/
+     
+            timer = document.getElementById('timer');
+        timer.insertAdjacentHTML("afterEnd", "<div  class = 'lap_timer'><span class='close-block'></span></div>");
+        document.getElementsByClassName('lap_timer').innerText = (str==''?'':str+': ')+
+            document.getElementsByClassName('lap_timer').innerText + '<br>' + document.getElementsByClassName('lap_timer').innerHTML;
+        
+        function trim(string) { return string.replace (/\s+/g, " ").replace(/(^\s*)|(\s*)$/g, ''); }
     }
     function clearFields() {
         init = 0;
         clearTimeout(clocktimer);
-        $('div')[3].value='00:00:00.00';
-        $('div')[3].label.value='';
+        $('#timer').innerText='00:00:00.00';
+      
     }
     
     function clearALL() {
         clearFields();
-        document.getElementById('marker').innerHTML = '';
+        document.getElementById('timer').innerHTML = '';
     }
-    
-    
+   
     function displayStop() {
-        var START = document.querySelector('.start'),
-            STOP = document.querySelector('.stop');
-        STOP.style.display = 'none';
-        START.style.display = 'block';
+        
+        $('#start').text("START");
     
     }
     function displayStart() {
-        var START = document.querySelector('.start'),
-            STOP = document.querySelector('.stop');
-        STOP.style.display = 'block';
-        START.style.display = 'none';
+        
+        $('#start').text("STOP");
         
     }
 }());

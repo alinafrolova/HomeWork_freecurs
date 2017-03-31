@@ -10,28 +10,20 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class = 'lep_timer'>
-            <div  class = "timer"> </div>
-            <div id = "marker"></div>
-          <!--  <div  class = "lap_timer">
-                <p>Timer Lap</p>
-                <span class='close-block'></span>
-            </div>
-          !-->
-            <div  class = "lap_timer"></div>
-            <div  class = "lap_timer"></div>
+        <div class = 'counter_timer'>
+            <div id = "timer"></div>
         </div>
         <div class = 'inter_panel'>
-            <div  class = "panel"> <button class = "start"> Start</button></div>
-            <div  class = "panel"> <button class = "lap">Lap </button></div>
-            <div  class = "panel"> <button class = "reset">Reset </button></div>
+            <div  class = "panel"> <button id = "start"> Start</button></div>
+            <div  class = "panel"> <button id = "lap">Lap </button></div>
+            <div  class = "panel"> <button id = "reset">Reset </button></div>
         </div>
     </div>
 
 </div>
 <script>
     (function () {
-        var TIMER = $('.timer');
+        var TIMER = $('#timer');
         window.newTimer  = new Timer(TIMER);
 
 
