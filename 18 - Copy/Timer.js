@@ -10,22 +10,25 @@
     function Timer(node) {
         var START = $('button')[0],
             LAP = $('button')[1],
-            RESET = $('button')[2];
-            
-       
+            RESET = $('button')[2],
+            CLOSE = $('div')[2];
         this.node = node;
         this._CreateTimer(this.node);
         START.addEventListener("click", this._Start.bind(this));
         LAP.addEventListener("click", this._Lap.bind(this));
         RESET.addEventListener("click", this._Reset.bind(this));
+        CLOSE.addEventListener("click", this._CloseLap.bind(this));
     }
-                  
      
     Timer.prototype._CreateTimer = function (node) {
-        
         var counter = node.append("00:00:00.00");
         return counter;
     },
+    Timer.prototype._CloseLap = function (event) {
+        var target = event.target; // где был клик?
+        if (target.tagName != 'SPAN') return; // не на TD? тогда не интересует
+        deleteLap(event);
+        },
  /////////_Start////////
     Timer.prototype._Start = function () {
         
@@ -87,7 +90,6 @@
     function clearFields() {
         init = 0;
         clearTimeout(clocktimer);
-
     }
     
     function clearALL() {
@@ -95,14 +97,11 @@
         document.getElementById('timer').innerHTML = '00:00:00.00';
     }
    
-    function displayStop() {
-        
-        $('#start').text("START");
-    
-    }
-    function displayStart() {
-        
-        $('#start').text("STOP");
-        
+    function displayStop() { $('#start').text("START"); }
+    function displayStart() {$('#start').text("STOP");}
+    function deleteLap(event) {
+        var parentElem = document.getElementsByClassName('counter_timer');
+        console.log("Delete");
+       // parentElem.removeChild(event);
     }
 }());
