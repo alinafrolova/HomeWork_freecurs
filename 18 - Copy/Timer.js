@@ -39,26 +39,16 @@
         else {
         console.log("_Stop");
         displayStop();
+            clearFields();
         init = 0;
         }
-       
     },
-        
-/////////_Stop////////
-    Timer.prototype._Stop = function (timer) {
-        console.log("_Stop");
-        displayStop();
-    },
-        
+
  /////////_Lap////////
     Timer.prototype._Lap = function () {
         console.log("Lap");
         insertTimer();
-       /* var str = trim(document.getElementById('timer').innerText);
-        document.getElementById('timer').innerHTML = (str==''?'':str+': ') +
-        document.getElementById('timer').innerText + '<br>' + document.getElementById('timer').innerHTML;*/
         clearFields();
-       // function trim(string) { return string.replace (/\s+/g, " ").replace(/(^\s*)|(\s*)$/g, ''); }
         },
         
 /////////_Reset////////
@@ -90,28 +80,19 @@
     }
     function insertTimer() {
         var str = trim(document.getElementById('timer').innerText),
-            
-         /*   fragment = document.createDocumentFragment();
-            fragment.appendChild("<div  class = 'lap_timer'><span class='close-block'></span></div>");
-           container.appendChild(fragment);*/
-     
-            timer = document.getElementById('timer');
-        timer.insertAdjacentHTML("afterEnd", "<div  class = 'lap_timer'><span class='close-block'></span></div>");
-        document.getElementsByClassName('lap_timer').innerText = (str==''?'':str+': ')+
-            document.getElementsByClassName('lap_timer').innerText + '<br>' + document.getElementsByClassName('lap_timer').innerHTML;
-        
+        timer = document.getElementById('timer');
+        timer.insertAdjacentHTML("afterEnd", "<div  class = 'lap_timer'><p>"+str+"</p><span class='close-block'></span></div>");
         function trim(string) { return string.replace (/\s+/g, " ").replace(/(^\s*)|(\s*)$/g, ''); }
     }
     function clearFields() {
         init = 0;
         clearTimeout(clocktimer);
-        $('#timer').innerText='00:00:00.00';
-      
+
     }
     
     function clearALL() {
         clearFields();
-        document.getElementById('timer').innerHTML = '';
+        document.getElementById('timer').innerHTML = '00:00:00.00';
     }
    
     function displayStop() {
