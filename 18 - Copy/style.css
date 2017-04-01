@@ -5,8 +5,10 @@
     padding: 10px; /* Поля вокруг текста */
     margin: auto; /* Выравниваем по центру */
 }
-.row{
-
+.counter_timer{
+    float:left;
+    width: 300px;
+    height: 500px;
 }
 .lep_timer{
     float:left;
@@ -14,14 +16,12 @@
     height: 500px;
 
 }
-.timer{
+#timer{
     float:left;
     width: 200px;
     height: 70px;
     background-color: white;
     margin: 40px;
-}
-.timer p{
     font-size:35px;
     font-weight: bold;
 }
