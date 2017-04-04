@@ -77,14 +77,14 @@
         if (minutes <10) minutes ='0'+minutes ;
         if (seconds <10) seconds ='0'+seconds ;
         if (milliseconds <10) milliseconds ='0'+milliseconds ;
-        if (init==1) console.log(hours  + ':' + minutes  + ':' + seconds  + '.' + milliseconds );
+        if (init==1);
         $('#timer').text(hours  + ':' + minutes  + ':' + seconds  + '.' + milliseconds) ;
         clocktimer = setTimeout(startTIME,10);
     }
     function insertTimer() {
         var str = trim(document.getElementById('timer').innerText),
-        timer = document.getElementById('timer');
-        timer.insertAdjacentHTML("afterEnd", "<div  class = 'lap_timer'><p>"+str+"</p><span class='close-block'></span></div>");
+        counter_lap = document.getElementById('counter_lap');
+        counter_lap.insertAdjacentHTML("afterEnd", "<div  class = 'lap_timer'><p>"+str+"</p><span class='close-block'></span></div>");
         function trim(string) { return string.replace (/\s+/g, " ").replace(/(^\s*)|(\s*)$/g, ''); }
     }
     function clearFields() {
@@ -93,15 +93,20 @@
     }
     
     function clearALL() {
+        var counter_lap = document.getElementById('counter_lap'),
+            parentElem = document.getElementsByClassName('counter_timer'),
+            timer = document.getElementById('timer');
         clearFields();
-        document.getElementById('timer').innerHTML = '00:00:00.00';
+        timer.innerHTML = '00:00:00.00';
+      //  parentElem.removeChild(counter_lap);
     }
    
     function displayStop() { $('#start').text("START"); }
     function displayStart() {$('#start').text("STOP");}
     function deleteLap(event) {
-        var parentElem = document.getElementsByClassName('counter_timer');
-        console.log("Delete");
+        var parentElem = event.target.parentNode;
+        console.log("Delete"+ parentElem);
+        parentElem.style.display = 'none';
        // parentElem.removeChild(event);
     }
 }());
