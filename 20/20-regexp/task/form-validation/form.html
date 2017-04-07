@@ -3,13 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Форма с валидацией</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/main.css">
+
 </head>
 <body>
 	<div class="container">
 		<h1>Форма сбора данных</h1>
-		<form role="form">
+		<form id="form">
 			<div class="form-group required">
 				<label class="control-label" for="email">Почта (будет использована как логин)<sup>*</sup></label>
 				<input class="form-control" id="email" placeholder="Почта" type="text">
@@ -48,10 +50,11 @@
 			<div class="form-group">
 				<!-- Example of disabled button -->
 				<!-- <button type="submit" class="btn btn-primary disabled">Отправить данные</button> -->
-				<button type="submit" class="btn btn-primary">Отправить данные</button>
+				<button id = "submit" type="submit" class="btn btn-primary">Отправить данные</button>
 			</div>
 		</form>
 	</div>
 	<script src="js/validate.js"></script>
+<script> window.inputCustomValidation = new CustomValidation();</script>
 </body>
 </html>
