@@ -16,7 +16,7 @@
         console.log("checkErrors");
          var target = event.target,
              value = target.value;
-         
+        checkEmpty(event) ;
        switch (target.id){
             case 'email' : checkEmail(value); break;
             case 'password' : checkPass(value); break;
@@ -27,7 +27,8 @@
         
     }
     CustomValidation.prototype._checkSubmit = function(input) {
-            console.log("_checkSubmit");
+        console.log("_checkSubmit");
+        checkValidity(e);
         }
     
    function checkEmail(value) {
@@ -61,18 +62,15 @@
         if (!regexp.test(value)){console.log("The numbet is incorect ");}//Международный формат записи телефона не выдержан
     }
     
-    
+    function checkEmpty(event) {
+        var value = event.target.value;
+        if (!value){console.log("The field is empty");}
+    }
     function checkValidity(e) {
         var inputs = document.getElementsByTagName("input");
         for (var i = 0; i < inputs.length; i++) {
-        
             var input = inputs[i];
-        
-            // Проверим валидность поля, используя встроенную в JavaScript функцию checkValidity()
-            if (!checkValidity(input)) {
-                console.log("checkSubmit");
-              
-            }
+            checkEmpty(input) ;
         
         }
      }
