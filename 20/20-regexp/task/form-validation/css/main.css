@@ -1,3 +1,10 @@
 .alert {
 	margin-top: 5px;
 }
+.alert-required,.alert-optional, .alert-incorrect, .has-error{
+	display: none;
+}
+.show-error{
+	display: block;
+}
+
