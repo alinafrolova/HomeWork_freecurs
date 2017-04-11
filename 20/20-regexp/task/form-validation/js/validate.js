@@ -1,7 +1,8 @@
 'use strict';
 (function () {
     var regexp,
-        arrayEmails;
+        arrayEmails = [];
+      
     function CustomValidation() {
         var FORM = document.getElementById("form"),
             SUBMIT = document.getElementById("submit");
@@ -37,7 +38,11 @@
        console.log("checkEmail");
        regexp = /[\D||\d][@][a-z]{1,}[(?=(\.)][a-z]/;
        if (!regexp.test(value)){addClasses('.email'); } //Ошибка в email-е
-       else {deleteClasses('.email');}
+       else {deleteClasses('.email');
+           if (!checkExistingEmail(value)){addClasses('.existing');}
+           else {deleteClasses('.existing');}
+       }
+      
    }
     function checkPass(value) {
         /*Пароль содержит запрещенные символы (разрешенные - латинские буквы, цифры, подчеркивание, минус)*/
@@ -106,7 +111,24 @@
                         
         }
      }
-   
+     
+    function checkExistingEmail(newEmail) {
+        var index = find(arrayEmails, newEmail);
+        if (index){arrayEmails.push(newEmail); return true;}
+        else {return false;}
+    }
+    
+    function find(array, value) {
+        if (array.indexOf) { // если метод существует
+            return array.indexOf(value);
+        }
+        
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] === value) return i;
+        }
+        
+        return -1;
+    }
    window.CustomValidation = CustomValidation;
 }());
 
