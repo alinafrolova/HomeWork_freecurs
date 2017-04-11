@@ -85,7 +85,7 @@
     }
     function checkEmpty(input) {
         
-        if (!input.value|| input.value === ' '){
+        if (!input.value|| input.value === ' '|| !input.checked ){
             console.log("The field is empty");
             input.nextElementSibling.style.display = 'block';
         }else {
