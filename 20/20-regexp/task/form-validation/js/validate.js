@@ -90,12 +90,14 @@
     }
     function checkEmpty(input) {
         
-        if (!input.value|| input.value === ' '|| !input.checked ){
-            console.log("The field is empty");
+        if (!input.value|| input.value === ' '|| checkCheckbox(input)){
             input.nextElementSibling.style.display = 'block';
         }else {
             input.nextElementSibling.style.display = 'none';
         }
+    }
+    function checkCheckbox(input) {
+        if (input.type === 'checkbox' && !input.checked ) {return true;}
     }
     function checkValidity(event) {
         var inputs,input, attrs;
