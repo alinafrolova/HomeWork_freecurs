@@ -15,10 +15,11 @@
     CustomValidation.prototype._checkErrors = function(event) {
         console.log("checkErrors");
          var target = event.target,
-             value = target.value;
+             value = target.value,
+             result;
         checkEmpty(event) ;
        switch (target.id){
-            case 'email' : checkEmail(value); break;
+            case 'email' : setInterval(function() { checkEmail(value);}, 1000);  break;
             case 'password' : checkPass(value); break;
             case 'city' : checkCity(value); break;
             case 'phone' : checkPhone(value); break;
@@ -31,12 +32,12 @@
         checkValidity(event);
         }
     
-   function checkEmail(value,event) {
+        
+   function checkEmail(value) {
        console.log("checkEmail");
-       regexp = /[\D||\d][@][a-z][(?=(\.)][a-z]/;
-       if (!regexp.test(value)){document.querySelector('.alert-incorrect').classList.add("show-error");
-           document.querySelector('.alert-incorrect').classList.add("has-error");
-           console.log("The email is incorrect");} //Ошибка в email-е
+       regexp = /[\D||\d][@][a-z]{1,}[(?=(\.)][a-z]/;
+       if (!regexp.test(value)){addClasses('.email'); return false;} //Ошибка в email-е
+       else {return true;}
    }
     function checkPass(value) {
         /*Пароль содержит запрещенные символы (разрешенные - латинские буквы, цифры, подчеркивание, минус)*/
@@ -45,59 +46,49 @@
             regexpChaNum = /[\D+)][\d+]/,
             regexpNum = /[\d+]/,
             regexpIncorData= /[(а-я)||_||-]/;
-        if (!regexpSymbols.test(value)){
-            document.querySelector('.password-shot').classList.add("show-error");
-            document.querySelector('.password-shot').classList.add("has-error");
-            console.log("The password is shot, should be more than 5 symbols");} //Пароль слишком короток (до 5 символов)
+        if (!regexpSymbols.test(value)){addClasses('.password-shot');} //Пароль слишком короток (до 5 символов)
         if (!regexpChaNum.test(value)){ //Простой пароль
-            if (!regexpNum.test(value)){
-                document.querySelector('.password-characters').classList.add("show-error");
-                document.querySelector('.password-characters').classList.add("has-error");
-                console.log("The password hasn't characters, only numbers");} //только числа
-            else {
-                document.querySelector('.password-numbers').classList.add("show-error");
-                document.querySelector('.password-numbers').classList.add("has-error");
-                console.log("The password hasn't numbers, only characters");} //только буквы
+            if (!regexpNum.test(value)){ addClasses('.password-characters');} //только числа
+            else { addClasses('.password-numbers');} //только буквы
         }
-        if (!regexpIncorData.test(value)){
-            document.querySelector('.password-prohibited').classList.add("show-error");
-            document.querySelector('.password-prohibited').classList.add("has-error");
-            console.log("The password has prohibited symbols ");}//Пароль содержит запрещенные символы (разрешенные - латинские буквы, подчеркивание, минус)
+        if (!regexpIncorData.test(value)){ addClasses('.password-prohibited');}//Пароль содержит запрещенные символы (разрешенные - латинские буквы, подчеркивание, минус)
         
     }
     function checkCity(value) {
         console.log("checkCity");
          regexp = /^[a-zA-Z]/;
-        if (!regexp.test(value)){
-            document.querySelector('.city').classList.add("show-error");
-            document.querySelector('.city').classList.add("has-error");
-            console.log("The city is incorrect");}
+        if (!regexp.test(value)){ addClasses('.city');}
     }
     function checkPhone(value) {
         console.log("checkPhone");
         regexp = /\+38\s(\d){2,3}\s(\d){3}\s(\d){2}\s(\d){2}/;
-        if (!regexp.test(value)){
-            document.querySelector('.phone').classList.add("show-error");
-            document.querySelector('.phone').classList.add("has-error");
-            console.log("The number is incorrect ");}//Международный формат записи телефона не выдержан
+        if (!regexp.test(value)){ addClasses('.phone');}//Международный формат записи телефона не выдержан
     }
-  /*  function addClasses(where, whichOne, whichTwo) {
-        document.querySelector('.phone').classList.add("show-error");
-        document.querySelector('.phone').classList.add("has-error");
+    function addClasses(where) {
         
-    }*/
+        document.querySelector(where).classList.add("show-error");
+        document.querySelector(where).classList.add("has-error");
+        
+    }
     function checkEmpty(event) {
         var value = event.target.value;
         if (!value){console.log("The field is empty");}
     }
     function checkValidity(event) {
-        var inputs = document.getElementsByTagName("input");
+        var inputs,input, attrs;
+         inputs = document.getElementsByTagName("input");
         for (var i = 0; i < inputs.length; i++) {
-            var input = inputs[i];
-            if (!input.value){
-                console.log("The field is empty");
-                input.nextElementSibling.style.display = 'block';
+             input = inputs[i];
+             attrs = input.attributes; // (4) можно получить коллекцию атрибутов
+            for (var j = 0; j < attrs.length; j++) {
+                if (attrs[j].name === 'required' ) {
+                    if (!input.value){
+                        console.log("The field is empty");
+                        input.nextElementSibling.style.display = 'block';
+                    }
+                }
             }
+                        
         }
      }
    
