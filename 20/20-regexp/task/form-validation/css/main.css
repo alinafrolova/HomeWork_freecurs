@@ -1,7 +1,7 @@
 .alert {
 	margin-top: 5px;
 }
-.alert-required,.alert-optional, .alert-incorrect, .has-error{
+.alert-required,.alert-optional, .alert-incorrect{
 	display: none;
 }
 .show-error{
