@@ -1,12 +1,43 @@
 'use strict';
 (function () {
-    var regexp,
-        arrayEmails = [];
-      
+    var regexp,className,where,obj,
+        arrayEmails = [],
+     regObjects = {
+        email: {
+            regexp : /[\D||\d][@][a-z]{1,}[(?=(\.)][a-z]/,
+            where: '.email' ,
+            className:'.existing'
+        },
+        /*Пароль содержит запрещенные символы (разрешенные - латинские буквы, цифры, подчеркивание, минус)*/
+        passSymbol:{
+            regexp : /^[a-zA-Z0-9]{5,}/, //more than 5 symbols
+            where:'.password-shot',
+        },
+        passSymbolChar:{
+            regexp : /[\d+]/,
+            where:'.password-characters',
+        },
+        passNum:{
+            regexp : /[\D+]/,
+            where:'.password-numbers',
+        },
+        passIncorData:{
+            regexp : /[(а-я)||_||-]/,
+            where:'.password-prohibited'
+        },
+        city:{
+            regexp : /^[a-zA-Z]/,
+            where: '.city'
+        },
+        
+        phone:{
+            regexp : /\+38\s(\d){2,3}\s(\d){3}\s(\d){2}\s(\d){2}/,
+            where: '.phone'
+        }
+    }
     function CustomValidation() {
         var FORM = document.getElementById("form"),
             SUBMIT = document.getElementById("submit");
-    
         //взаимодействие с формой
         FORM.addEventListener('keyup', this._checkErrors.bind(this));
         SUBMIT.addEventListener('click', this._checkSubmit.bind(this));
@@ -16,16 +47,19 @@
     CustomValidation.prototype._checkErrors = function(event) {
         console.log("checkErrors");
          var target = event.target,
-             value = target.value,
-             result;
+             value = target.value;
         checkEmpty(target) ;
        switch (target.id){
-            case 'email' : checkEmail(value);  break;
-            case 'password' : checkPass(value); break;
-            case 'city' : checkCity(value); break;
-            case 'phone' : checkPhone(value); break;
+            case 'email' : checkerFields(value,regObjects.email );  break;
+            case 'password' :
+                checkerFields(value,regObjects.passSymbol);
+                checkerFields(value,regObjects.passSymbolChar);
+                checkerFields(value,regObjects.passNum);
+                checkerFields(value,regObjects.passIncorData);
+                break;
+            case 'city' : checkerFields(value,regObjects.city); break;
+            case 'phone' : checkerFields(value,regObjects.phone); break;
         }
-        
         
     }
     CustomValidation.prototype._checkSubmit = function(event) {
@@ -33,51 +67,20 @@
         checkValidity(event);
         }
     
-        
-   function checkEmail(value) {
-       console.log("checkEmail");
-       regexp = /[\D||\d][@][a-z]{1,}[(?=(\.)][a-z]/;
-       if (!regexp.test(value)){addClasses('.email'); } //Ошибка в email-е
-       else {deleteClasses('.email');
-           if (!checkExistingEmail(value)){addClasses('.existing');}
-           else {deleteClasses('.existing');}
-       }
       
-   }
-    function checkPass(value) {
-        /*Пароль содержит запрещенные символы (разрешенные - латинские буквы, цифры, подчеркивание, минус)*/
-        console.log("checkPass");
-        var regexpSymbols = /^[a-zA-Z0-9]{5,}/, //more than 5 symbols
-            regexpChaNum = /[\D+)][\d+]/,
-            regexpNum = /[\d+]/,
-            regexpIncorData= /[(а-я)||_||-]/;
-        if (!regexpSymbols.test(value)){
-            addClasses('.password-shot');}
-           else{ deleteClasses('.password-shot');} //Пароль слишком короток (до 5 символов)
-        if (!regexpChaNum.test(value)||!regexpNum.test(value)){ //Простой пароль
-            addClasses('.password-characters');//только числа
-            addClasses('.password-numbers'); //только буквы
-        }else{
-            deleteClasses('.password-characters');//только числа
-            deleteClasses('.password-numbers'); //только буквы
+    function checkerFields(value,obj) {
+        className = obj.className || 0,
+        regexp = obj.regexp,
+        where  = obj.where;
+       
+        if (!regexp.test(value)){
+            addClasses(where);
         }
-        
-        if (regexpIncorData.test(value)){
-            addClasses('.password-prohibited');}//Пароль содержит запрещенные символы (разрешенные - латинские буквы, подчеркивание, минус)
-        else {deleteClasses('.password-prohibited');}
+        else { deleteClasses(where);
+            if (className){checkExistingEmail(value);}
+        }
     }
-    function checkCity(value) {
-        console.log("checkCity");
-         regexp = /^[a-zA-Z]/;
-        if (!regexp.test(value)){ addClasses('.city');}
-        else {deleteClasses('.city');}
-    }
-    function checkPhone(value) {
-        console.log("checkPhone");
-        regexp = /\+38\s(\d){2,3}\s(\d){3}\s(\d){2}\s(\d){2}/;
-        if (!regexp.test(value)){ addClasses('.phone');}//Международный формат записи телефона не выдержан
-        else {deleteClasses('.phone');}
-    }
+    
     function addClasses(where) {
         
         document.querySelector(where).classList.add("show-error");
@@ -96,9 +99,11 @@
             input.nextElementSibling.style.display = 'none';
         }
     }
+    
     function checkCheckbox(input) {
         if (input.type === 'checkbox' && !input.checked ) {return true;}
     }
+    
     function checkValidity(event) {
         var inputs,input, attrs;
          inputs = document.getElementsByTagName("input");
@@ -116,8 +121,12 @@
      
     function checkExistingEmail(newEmail) {
         var index = find(arrayEmails, newEmail);
-        if (index){arrayEmails.push(newEmail); return true;}
-        else {return false;}
+        if (index)
+        {
+            arrayEmails.push(newEmail);
+            deleteClasses(className);
+        }
+         else {addClasses(className);}
     }
     
     function find(array, value) {
