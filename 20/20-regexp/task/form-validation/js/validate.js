@@ -10,23 +10,23 @@
         },
         /*Пароль содержит запрещенные символы (разрешенные - латинские буквы, цифры, подчеркивание, минус)*/
         passSymbol:{
-            regexp : /^[a-zA-Z0-9]{5,}/, //more than 5 symbols
+            regexp : /\S{5,}/i, //less than 5 symbols // any symbols \S{0,5}/i,
             where:'.password-shot',
         },
         passSymbolChar:{
-            regexp : /[\d+]/,
+            regexp : /[\D+]/i,
             where:'.password-characters',
         },
         passNum:{
-            regexp : /[\D+]/,
+            regexp : /[\d+_-]/i,
             where:'.password-numbers',
         },
         passIncorData:{
-            regexp : /[(а-я)||_||-]/,
+            regexp : /[^а-я-_\s]/i,
             where:'.password-prohibited'
         },
         city:{
-            regexp : /^[a-zA-Z]/,
+            regexp : /[a-z]/i,
             where: '.city'
         },
         
@@ -73,24 +73,22 @@
         regexp = obj.regexp,
         where  = obj.where;
        
-        if (!regexp.test(value)){
-            addClasses(where);
-        }
-        else { deleteClasses(where);
+        if (regexp.test(value)){
+            deleteClasses(where);
             if (className){checkExistingEmail(value);}
         }
+        else { addClasses(where); }
     }
     
     function addClasses(where) {
-        
         document.querySelector(where).classList.add("show-error");
         document.querySelector(where).style.display = 'block';
-        
-    }
+            }
+            
     function deleteClasses(where) {
         document.querySelector(where).style.display = 'none';
-        
     }
+    
     function checkEmpty(input) {
         
         if (!input.value|| input.value === ' '|| checkCheckbox(input)){
@@ -105,18 +103,17 @@
     }
     
     function checkValidity(event) {
-        var inputs,input, attrs;
-         inputs = document.getElementsByTagName("input");
-        for (var i = 0; i < inputs.length; i++) {
-             input = inputs[i];
-             attrs = input.attributes; // (4) можно получить коллекцию атрибутов
-            for (var j = 0; j < attrs.length; j++) {
-                if (attrs[j].name === 'required' ) {
+        var inputs ,input, attrs;
+        inputs = document.getElementsByTagName("input");
+        NodeList.prototype.forEach = HTMLCollection.prototype.forEach = NamedNodeMap.prototype.forEach = Array.prototype.forEach;
+        inputs.forEach(function(input) {
+            attrs = input.attributes;
+            attrs.forEach(function(item) {
+                if (item.name === 'required' ) {
                     checkEmpty(input) ;
                 }
-            }
-                        
-        }
+            });
+        });
      }
      
     function checkExistingEmail(newEmail) {
