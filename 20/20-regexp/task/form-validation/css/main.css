@@ -1,0 +1,10 @@
+.alert {
+	margin-top: 5px;
+}
+.alert-required,.alert-optional, .alert-incorrect{
+	display: none;
+}
+.show-error{
+	display: block;
+}
+

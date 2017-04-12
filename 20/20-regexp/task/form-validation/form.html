@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Форма с валидацией</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+	<div class="container">
+		<h1>Форма сбора данных</h1>
+		<form id="form">
+			<!-- Same as above, but in error state and message -->
+		 <div class="form-group ">
+				<label class="control-label" for="email">Почта (будет использована как логин)<sup>*</sup></label>
+				<input class="form-control" id="email" placeholder="Почта" type="text" required>
+				<div class="alert alert-danger alert-required">The email is required field!</div>
+				<div class="alert alert-danger alert-incorrect email">The email is incorrect! Check please. </div>
+			 <div class="alert alert-danger alert-incorrect existing">The email is existing! Could you choose other e-mail. </div>
+			</div>
+
+			<div class="form-group required">
+				<label for="password">Пароль (постарайся придумать посложнее)<sup>*</sup></label>
+				<input class="form-control" id="password" placeholder="Пароль" type="password" required>
+				<div class="alert alert-danger alert-required">The password is required field!</div>
+				<div class="alert alert-danger alert-required password-shot">The password is shot, should be more than 5 symbols!</div>
+				<div class="alert alert-danger alert-required password-characters">The password hasn't characters, only numbers! OR</div>
+				<div class="alert alert-danger alert-required password-numbers">The password hasn't numbers, only characters!</div>
+				<div class="alert alert-danger alert-required password-prohibited">The password has prohibited symbols!</div>
+			</div>
+
+			<div class="form-group">
+				<label for="city">Город проживания (указывать не обязательно)</label>
+				<input class="form-control" id="city" placeholder="Город" type="text">
+				<div class="alert alert-danger alert-optional">The city is empty field!</div>
+				<div class="alert alert-danger alert-incorrect city">The city is incorrect! Check please. </div>
+			</div>
+
+			<div class="form-group">
+				<label for="phone">Телефон (указывать не обязательно)</label>
+				<input class="form-control" id="phone" placeholder="Номер телефона в международном формате например +38 050 999 33 22" type="text">
+				<div class="alert alert-danger alert-optional">The phone is empty field!</div>
+				<div class="alert alert-danger alert-incorrect phone">The phone is incorrect! Check please, the format should be +38 000 000 00 00. </div>
+			</div>
+
+			<div class="form-group">
+				<div class="checkbox">
+					<label>
+						Согласен со <a href="/">всем</a>
+						<input type="checkbox" required >
+						<div class="alert alert-danger alert-required">The checkbox is required field!</div>
+
+					</label>
+				</div>
+
+			</div>
+
+			<div class="form-group">
+				<!-- Example of disabled button -->
+				<!-- <button type="submit" class="btn btn-primary disabled">Отправить данные</button> -->
+				<button id = "submit" type="submit" class="btn btn-primary">Отправить данные</button>
+			</div>
+		</form>
+	</div>
+	<script src="js/validate.js"></script>
+<script> window.inputCustomValidation = new CustomValidation();</script>
+</body>
+</html>
