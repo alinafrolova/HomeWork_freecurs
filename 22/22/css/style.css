@@ -1,0 +1,24 @@
+
+  #container {
+    height: 345px;
+    width: 1200px;
+
+  }
+  #control-panel{
+    height: 100%;
+    width: 25%;
+    float: left;
+
+  }
+  .chisel{
+    height: 23%;
+    width: 100%;
+    border-style: solid; /* Стиль линии вокруг параграфа */
+    padding: 1px;
+  }
+  #images-panel{
+    height: 100%;
+    width: 74%;
+    float: right;
+    display: inline-block;
+  }

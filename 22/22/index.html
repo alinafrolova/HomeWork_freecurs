@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slider</title>
+    <script src = "js/jquery-3.2.1.min.js"> </script>
+    <script src = "js/slider.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+<body>
+  <div id = 'container'>
+      <div id = 'control-panel'>
+          <div class = 'chisel'><p>1</p></div>
+          <div class = 'chisel'><p>2</p></div>
+          <div class = 'chisel'><p>3</p></div>
+          <div class = 'chisel'><p>4</p></div>
+      </div>
+      <div id = 'images-panel'>
+          <img src="images/image1.jpg">
+
+      </div>
+  </div>
+<script>
+    $(function() {
+        animateSlider.init();
+        setInterval(function() { // ставим пятисекундный интервал для перелистывания картинок
+            animateSlider.set();
+        },5000);
+    });
+
+</script>
+</body>
+</html>
