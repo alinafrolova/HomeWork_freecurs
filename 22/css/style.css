@@ -16,9 +16,12 @@
     border-style: solid; /* Стиль линии вокруг параграфа */
     padding: 1px;
   }
-  #images-panel{
+  #slider{
     height: 100%;
     width: 74%;
     float: right;
     display: inline-block;
+  }
+  .hidden-img{
+    display: none;
   }

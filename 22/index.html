@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 
 <html lang="en">
 <head>
@@ -6,6 +6,8 @@
     <title>slider</title>
     <script src = "js/jquery-3.2.1.min.js"> </script>
     <script src = "js/slider.js"></script>
+    <script type="text/javascript">window._trackJs = { token: '7611eb7e4f6a4af69e990de32fb2503f' };</script>
+    <script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
     <link href="css/style.css" rel="stylesheet">
 
 </head>
@@ -17,21 +19,20 @@
           <div class = 'chisel'><p>3</p></div>
           <div class = 'chisel'><p>4</p></div>
       </div>
-      <div id = 'images-panel'>
-          <img src="images/image1.jpg">
-          <img src="images/image2.jpg">
-          <img src="images/image3.jpg">
-          <img src="images/image4.jpg">
+      <div id = 'slider'>
+          <div class="slide"><img src="images/image1.jpg"></div>
+          <div class="slide hidden-img"><img src="images/image2.jpg"></div>
+          <div class="slide hidden-img"><img src="images/image3.jpg"></div>
+          <div class="slide hidden-img"><img src="images/image4.jpg"></div>
       </div>
   </div>
-<script>
-    window.onload = function() { // запуск слайдера после загрузки документа
-        animateSlider.init();
-        setInterval(function() { // ставим пятисекундный интервал для перелистывания картинок
-            animateSlider.changeSlider();
-        },5000);
-    };
 
+<script>
+
+    (function () {
+        window.AnimateSlider  = new AnimateSlider();
+
+    }());
 </script>
 </body>
 </html>
