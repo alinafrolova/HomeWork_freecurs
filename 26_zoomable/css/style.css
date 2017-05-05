@@ -18,6 +18,7 @@
 }
 .image{
     opacity: 0;
+    display: block;
 }
 .active_img {
     margin: 10px auto 0;
@@ -26,6 +27,15 @@
     border: 1px solid #4c6a8a;
     opacity: 1;
     position: absolute;
-    top:20%;
-    left: 20%;
+
+}
+.close-block {
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: -1px;
+    width: 16px;
+    height: 16px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAElBMVEXqAAD8oaH/AAD/ra3/vr7///91+I/7AAAAQklEQVR42oXPwQoAIAgD0JXu/385FfTQgnYweKAp9pUXmE+swAFWAG8owQBTqjQQ8SQOcAdRQVtkqHy7dDFd/X/tAVqqAopyUfkOAAAAAElFTkSuQmCC);
+    cursor: pointer;
 }
