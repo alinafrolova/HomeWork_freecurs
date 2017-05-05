@@ -31,7 +31,12 @@
                if (eventObject.which == 27)
                    closeImg();
            });
-       });
+
+           $( window ).scroll(function() {
+               console.log("scroll");
+              $(".image").center().fadeIn( "slow" );
+           });
+           });
 
        function closeImg() {
            var blockImg = $(".image"),
@@ -44,8 +49,8 @@
        }
        jQuery.fn.center = function () {
            this.css("position","absolute");
-           var resTop = (($(window).height() - this.outerHeight()) / 2) + $(window).scrollTop(),
-               resLeft = (($(window).width() - this.outerWidth()) / 2) + $(window).scrollLeft();
+            var resTop = (($(window).height() - this.height()) / 2) + $(window).scrollTop(),
+               resLeft = (($(window).width() - this.width()) / 2) + $(window).scrollLeft();
            if( resTop < 0) {resTop = 10}
            if( resLeft < 0) {resLeft = 10}
            this.css("top", resTop + "px");
