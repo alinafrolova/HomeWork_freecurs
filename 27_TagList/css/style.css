@@ -1,0 +1,14 @@
+.tag-remove {
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: -1px;
+    width: 7px;
+    height: 7px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAElBMVEXqAAD8oaH/AAD/ra3/vr7///91+I/7AAAAQklEQVR42oXPwQoAIAgD0JXu/385FfTQgnYweKAp9pUXmE+swAFWAG8owQBTqjQQ8SQOcAdRQVtkqHy7dDFd/X/tAVqqAopyUfkOAAAAAElFTkSuQmCC);
+    cursor: pointer;
+}
+.image{
+    opacity: 0;
+    display: block;
+}
