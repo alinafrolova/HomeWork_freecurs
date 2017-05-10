@@ -1,6 +1,21 @@
+
+ .edit-tags a {
+    color: blue;
+    text-decoration: none; /* Убираем подчеркивание */
+     border-bottom: 1px dashed blue;
+
+}
+ .finish-editing a {
+     display: none;
+     color: blue;
+     text-decoration: none; /* Убираем подчеркивание */
+     border-bottom: 1px dashed blue;
+
+ }
+
 .tag-remove {
-    display: block;
-    position: absolute;
+    display: none;
+    float: left;
     top: 8px;
     right: -1px;
     width: 7px;
@@ -12,3 +27,17 @@
     opacity: 0;
     display: block;
 }
+ .tag-list{
+     margin-left: 5px;
+     margin-top: 5px;
+ }
+.tag-description{
+    display: inline-block;
+    float: left;
+    background-color: darkgray;
+    color: white;
+    margin-left: 10px;
+}
+ .tag-additing{
+     display: none;
+ }

@@ -10,7 +10,8 @@
 </head>
 <body>
 <div class="content">
- <div class="edit-tags"> Edit Tags </div>
+ <div class="edit-tags"> <a> Edit Tags </a> </div>
+<div class="finish-editing"><a> Finish editing</a> </div>
  <div class="tag-container">
 	<div class = "tag-list">
 	 <div class="tag-description">ASD</div>
@@ -18,11 +19,10 @@
 	</div>
 	 <div class = "tag-list">
 		 <div class="tag-description">BDSM</div>
-		 <span class="tag-remove"></span>
+		 <div><span class="tag-remove"></span> </div>
+
 	 </div>
  </div>
-
-<div class="finish-editing"> Finish editing </div>
 <div class="tag-additing">
 	<input type="text" name="TagName" ><br>
 	<button type="submit" >Add </button>
@@ -31,7 +31,7 @@
 
 </div>
 	<script>
-
+		window.TagList  = new TagList(document.documentElement);
 	</script>
 </body>
 </html>
