@@ -62,18 +62,25 @@
        }
        function addNode() {
            var input = $('input[name = "TagName"]'),
-               text = input.val().toUpperCase() || DEFAULT,
+               text = $.trim(input.val().toUpperCase()) || DEFAULT,
                tagContainer = $('.tag-container'),
                NODE;
-           checkTextNode(text);
-           NODE = '<div class = "tag-list"><div class="tag-description">Default</div><span class="tag-remove"></span></div>';
-           tagContainer.append(NODE);
-           tagContainer.find('.tag-remove').css("display","block");
-           tagContainer.find('.tag-description:last').text(text);
-           input.val('');
-       }
-       function checkTextNode() {
+           if (checkTextNode(text)) {
+               NODE = '<div class = "tag-list"><div class="tag-description">Default</div><span class="tag-remove"></span></div>';
+               tagContainer.append(NODE);
+               tagContainer.find('.tag-remove').css("display","block");
+               tagContainer.find('.tag-description:last').text(text);
+               input.val('');
+           }
            
+       }
+       function checkTextNode(text) {
+          var result;
+           $('.tag-description').each(function(i,elem) {
+               if(text === elem.innerText){ alert("I can not to add tag"); result = false}
+               else {console.log("I add tag"); result =  true; }
+           });
+           return result;
        }
 
 })();
