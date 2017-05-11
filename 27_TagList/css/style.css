@@ -1,11 +1,14 @@
-
+ .content{
+     width: 50%;
+     min-width: 500px;
+ }
  .edit-tags a,.finish-editing a {
     color: blue;
     text-decoration: none; /* Убираем подчеркивание */
      border-bottom: 1px dashed blue;
      cursor: pointer;
-     width: 20%;
-
+     float: left;
+     margin:5%;
 }
  .finish-editing a, .tag-additing,.tag-remove {
      display: none;
@@ -25,8 +28,13 @@
     display: block;
 }
  .tag-list{
-     margin-left: 5px;
-     margin-top: 5px;
+     margin: 5px;
+ }
+ .tag-container{
+     float: left;
+     border-style: dotted;
+     width: 25%;
+     margin:5%;
  }
 .tag-description{
 
@@ -36,7 +44,9 @@
     margin-left: 10px;
 }
 
-.tag-additing{
-    float: left;
+.tag-additing, button{
+    float: right;
+    width: 25%;
+    margin:5%;
 }
 
